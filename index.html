@@ -599,37 +599,74 @@ img, svg { max-width: 100%; display: block; }
 <!-- VIDEO -->
 <section id="video" style="border-top:1px solid var(--hair)">
   <div class="section-wrap">
+    <p class="eyebrow R">03 — Video</p>
+    <h2 class="section-h R" data-d="1" style="margin-bottom:32px;">Music<br><em>Videos</em></h2>
+
+    <!-- Tab buttons -->
+    <div style="display:flex;gap:0;border-bottom:1px solid var(--hair);margin-bottom:32px;" class="R" data-d="2">
+      <button onclick="switchVid(0)" id="vtab0"
+        style="font-family:var(--display);font-size:13px;letter-spacing:.12em;padding:10px 24px 8px;border:none;background:none;cursor:pointer;border-bottom:2px solid var(--red);color:var(--ink);">
+        Back &amp; Better
+      </button>
+      <button onclick="switchVid(1)" id="vtab1"
+        style="font-family:var(--display);font-size:13px;letter-spacing:.12em;padding:10px 24px 8px;border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;color:var(--grey);">
+        Healed
+      </button>
+    </div>
+
+    <!-- Video panels -->
     <div class="video-inner">
-      <div>
-        <div class="video-frame" style="aspect-ratio:16/9;position:relative;background:#000;overflow:hidden;">
-          <iframe
-            src="https://www.youtube.com/embed/videoseries?list=UUdontaeamare&autoplay=0"
-            style="position:absolute;inset:0;width:100%;height:100%;border:none;"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen loading="lazy" title="Dontae Amare — Back & Better"></iframe>
-        </div>
-        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
-            style="font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--red);text-decoration:none;padding:6px 14px 4px;border:1px solid rgba(216,38,27,.4);">
-            Back &amp; Better ↗
-          </a>
-          <a href="https://www.youtube.com/@dontaeamare" target="_blank" rel="noopener"
-            style="font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--grey);text-decoration:none;padding:6px 14px 4px;border:1px solid var(--hair);">
-            All Videos ↗
-          </a>
+      <!-- Back & Better -->
+      <div id="vpanel0">
+        <div style="aspect-ratio:9/16;position:relative;background:#000;overflow:hidden;max-width:360px;margin:0 auto;">
+          <video src="video1.mp4" controls preload="metadata" playsinline
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
         </div>
       </div>
+      <!-- Healed -->
+      <div id="vpanel1" style="display:none;">
+        <div style="aspect-ratio:9/16;position:relative;background:#000;overflow:hidden;max-width:360px;margin:0 auto;">
+          <video src="video2.mp4" controls preload="metadata" playsinline
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+        </div>
+      </div>
+
       <div class="video-copy">
-        <p class="eyebrow R">03 — Video</p>
-        <h2 class="section-h R" data-d="1">Back &amp;<br><em>Better</em></h2>
-        <p class="R" data-d="2" style="color:var(--grey);font-size:15px;line-height:1.7;max-width:36ch;">The latest visual. More music videos, behind-the-scenes, and studio sessions on the YouTube channel — subscribe and stay in the loop.</p>
-        <div class="R" data-d="3" style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="https://www.youtube.com/@dontaeamare" target="_blank" rel="noopener" class="btn-primary">Subscribe on YouTube</a>
+        <p id="vtitle" style="font-family:var(--display);font-size:28px;letter-spacing:.04em;color:var(--ink);margin-bottom:12px;">Back &amp; Better</p>
+        <p id="vdesc" style="color:var(--grey);font-size:15px;line-height:1.7;max-width:36ch;">Official music video — from the album <em>The Last Don</em>, released August 16, 2026.</p>
+        <div style="margin-top:24px;">
+          <a href="https://open.spotify.com/artist/2ZEWeT8awKDSNVGqWuktAx" target="_blank" rel="noopener" class="btn-primary">Stream on Spotify</a>
+        </div>
+        <div style="margin-top:16px;">
+          <a href="https://www.youtube.com/@dontaeamare" target="_blank" rel="noopener"
+            style="font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--grey);text-decoration:none;">
+            YouTube Channel ↗
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+const vdata = [
+  { title: "Back &amp; Better", desc: "Official music video — from the album <em>The Last Don</em>, released August 16, 2026." },
+  { title: "Healed",            desc: "Official music video — Dontae Amare." }
+];
+function switchVid(i) {
+  [0,1].forEach(j => {
+    document.getElementById('vpanel'+j).style.display = j===i ? 'block' : 'none';
+    const tab = document.getElementById('vtab'+j);
+    tab.style.borderBottom = j===i ? '2px solid var(--red)' : '2px solid transparent';
+    tab.style.color = j===i ? 'var(--ink)' : 'var(--grey)';
+    // pause the other video
+    const v = document.querySelector('#vpanel'+j+' video');
+    if (v && j!==i) v.pause();
+  });
+  document.getElementById('vtitle').innerHTML = vdata[i].title;
+  document.getElementById('vdesc').innerHTML  = vdata[i].desc;
+}
+</script>
 
 <!-- BOOK -->
 <section id="book" style="border-top:1px solid var(--hair)">
