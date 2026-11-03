@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /dare-portal.html
+
+Sitemap: https://dontaeamare.com/sitemap.xml
