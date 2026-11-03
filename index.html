@@ -429,6 +429,7 @@ img, svg { max-width: 100%; display: block; }
 @media (max-width: 760px) { .nl-inner { grid-template-columns: 1fr; } .nl-form { flex-direction: column; } .nl-input { border-right: 1px solid var(--ink); margin-bottom: -1px; } .nl-btn { padding: 14px; text-align: center; } }
 
 /* ── FOOTER ── */
+@media (max-width: 760px) { #shows .section-wrap > div[style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: 1fr !important; } }
 .footer-band { background: var(--ink); color: var(--wall); }
 .footer-inner {
   max-width: 1280px; margin: 0 auto;
@@ -464,6 +465,7 @@ img, svg { max-width: 100%; display: block; }
     <a href="#video">Video</a>
     <a href="#book">Book</a>
     <a href="#dare">DARE</a>
+    <a href="#shows">Shows</a>
     <a href="#contact" class="btn-nav">Book Now</a>
   </nav>
   <button class="hamburger" id="menuBtn" aria-label="Open menu">
@@ -477,6 +479,7 @@ img, svg { max-width: 100%; display: block; }
   <a href="#video" onclick="closeMob()">Video</a>
   <a href="#book" onclick="closeMob()">Book</a>
   <a href="#dare" onclick="closeMob()">DARE</a>
+  <a href="#shows" onclick="closeMob()">Shows</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
 </nav>
 
@@ -511,10 +514,11 @@ img, svg { max-width: 100%; display: block; }
 
 <!-- TRUST STRIP -->
 <div class="trust">
-  <span>Faith-Driven</span>
   <span>Fort Worth, TX</span>
-  <span>Hip-Hop</span>
-  <span>Desired Ambitions Requires Execution</span>
+  <span>Available on Spotify &amp; Apple Music</span>
+  <span>The Last Don — Aug 1, 2026</span>
+  <span>DARE Arcade · DARE Store · DARE Portal</span>
+  <span>Author · Recording Artist</span>
 </div>
 
 <!-- ABOUT -->
@@ -597,20 +601,29 @@ img, svg { max-width: 100%; display: block; }
   <div class="section-wrap">
     <div class="video-inner">
       <div>
-        <div class="video-frame">
-          <video
-            src="back-and-better.mp4"
-            controls preload="metadata" playsinline
-            style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;background:#000;object-fit:cover;">
-            Your browser does not support the video tag.
-          </video>
+        <div class="video-frame" style="aspect-ratio:16/9;position:relative;background:#000;overflow:hidden;">
+          <iframe
+            src="https://www.youtube.com/embed/videoseries?list=UUdontaeamare&autoplay=0"
+            style="position:absolute;inset:0;width:100%;height:100%;border:none;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy" title="Dontae Amare — Back & Better"></iframe>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+            style="font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--red);text-decoration:none;padding:6px 14px 4px;border:1px solid rgba(216,38,27,.4);">
+            Back &amp; Better ↗
+          </a>
+          <a href="https://www.youtube.com/@dontaeamare" target="_blank" rel="noopener"
+            style="font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--grey);text-decoration:none;padding:6px 14px 4px;border:1px solid var(--hair);">
+            All Videos ↗
+          </a>
         </div>
       </div>
       <div class="video-copy">
         <p class="eyebrow R">03 — Video</p>
         <h2 class="section-h R" data-d="1">Back &amp;<br><em>Better</em></h2>
-        <p class="R" data-d="2" style="color:var(--grey);font-size:15px;line-height:1.7;max-width:36ch;">The latest visual from Dontae Amare. More music videos, behind-the-scenes, and studio sessions on YouTube.</p>
-        <div class="R" data-d="3">
+        <p class="R" data-d="2" style="color:var(--grey);font-size:15px;line-height:1.7;max-width:36ch;">The latest visual. More music videos, behind-the-scenes, and studio sessions on the YouTube channel — subscribe and stay in the loop.</p>
+        <div class="R" data-d="3" style="display:flex;gap:10px;flex-wrap:wrap;">
           <a href="https://www.youtube.com/@dontaeamare" target="_blank" rel="noopener" class="btn-primary">Subscribe on YouTube</a>
         </div>
       </div>
@@ -622,12 +635,21 @@ img, svg { max-width: 100%; display: block; }
 <section id="book" style="border-top:1px solid var(--hair)">
   <div class="section-wrap">
     <div class="book-inner">
-      <div class="book-cover R" data-d="1">
-        <div class="book-cover-rule"></div>
-        <div class="book-cover-title">Divine Axioms<br>&amp; Maxims</div>
-        <div class="book-cover-rule"></div>
-        <div class="book-cover-author">Dontae Amare</div>
-      </div>
+      <a href="https://www.amazon.com/dp/B0FBMMZKG9?ref_=quick_view_ref_tag" target="_blank" rel="noopener"
+         class="R" data-d="1"
+         style="display:block;width:clamp(160px,20vw,240px);flex-shrink:0;text-decoration:none;">
+        <img
+          src="https://m.media-amazon.com/images/I/71example-cover.jpg"
+          alt="Divine Axioms & Maxims book cover"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          style="width:100%;display:block;box-shadow:4px 4px 24px rgba(0,0,0,.18);">
+        <div class="book-cover" style="display:none;width:100%;">
+          <div class="book-cover-rule"></div>
+          <div class="book-cover-title">Divine Axioms<br>&amp; Maxims</div>
+          <div class="book-cover-rule"></div>
+          <div class="book-cover-author">Dontae Amare</div>
+        </div>
+      </a>
       <div class="book-copy">
         <p class="eyebrow R">04 — Book</p>
         <h2 class="section-h R" data-d="1">Divine Axioms<br><em>&amp; Maxims</em></h2>
@@ -655,13 +677,44 @@ img, svg { max-width: 100%; display: block; }
     <!-- DARE Arcade -->
     <div class="dare-product R" data-d="1">
       <div class="dare-prod-visual">
-        <div class="dare-arcade-screen">
-          <div class="dare-arcade-scanlines"></div>
-          <div class="dare-arcade-content">
-            <div class="dare-arcade-logo">DARE</div>
-            <div class="dare-arcade-sub">ARCADE</div>
-            <div class="dare-arcade-dots"><span></span><span></span><span></span></div>
-          </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:340px;margin:0 auto;">
+          <!-- The Last Don -->
+          <a href="https://dare-arcade.vercel.app" target="_blank" rel="noopener"
+            style="text-decoration:none;display:block;background:#0d0d0d;border:1px solid rgba(216,38,27,.35);overflow:hidden;aspect-ratio:3/4;position:relative;">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;">
+              <div style="font-family:var(--display);font-size:9px;letter-spacing:.18em;color:var(--red);margin-bottom:4px;">GAME 01</div>
+              <div style="font-family:var(--display);font-size:18px;line-height:1.1;color:#fff;letter-spacing:.04em;">THE<br>LAST DON</div>
+            </div>
+            <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(216,38,27,.15) 0%,transparent 60%);pointer-events:none;"></div>
+            <div style="position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="white"><polygon points="2,1 9,5 2,9"/></svg>
+            </div>
+          </a>
+          <!-- CROWD RUN -->
+          <a href="https://dare-arcade.vercel.app" target="_blank" rel="noopener"
+            style="text-decoration:none;display:block;background:#0d0d0d;border:1px solid rgba(255,255,255,.12);overflow:hidden;aspect-ratio:3/4;position:relative;">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;">
+              <div style="font-family:var(--display);font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.4);margin-bottom:4px;">GAME 02</div>
+              <div style="font-family:var(--display);font-size:18px;line-height:1.1;color:#fff;letter-spacing:.04em;">CROWD<br>RUN</div>
+            </div>
+            <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.04) 0%,transparent 60%);pointer-events:none;"></div>
+          </a>
+          <!-- Cosmic Encounter -->
+          <a href="https://dare-arcade.vercel.app" target="_blank" rel="noopener"
+            style="text-decoration:none;display:block;background:#0d0d0d;border:1px solid rgba(255,255,255,.12);overflow:hidden;aspect-ratio:3/4;position:relative;">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;">
+              <div style="font-family:var(--display);font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.4);margin-bottom:4px;">GAME 03</div>
+              <div style="font-family:var(--display);font-size:18px;line-height:1.1;color:#fff;letter-spacing:.04em;">COSMIC<br>ENCOUNTER</div>
+            </div>
+          </a>
+          <!-- Rebel Elimination -->
+          <a href="https://dare-arcade.vercel.app" target="_blank" rel="noopener"
+            style="text-decoration:none;display:block;background:#0d0d0d;border:1px solid rgba(255,255,255,.12);overflow:hidden;aspect-ratio:3/4;position:relative;">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;">
+              <div style="font-family:var(--display);font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.4);margin-bottom:4px;">GAME 04</div>
+              <div style="font-family:var(--display);font-size:18px;line-height:1.1;color:#fff;letter-spacing:.04em;">REBEL<br>ELIM.</div>
+            </div>
+          </a>
         </div>
       </div>
       <div>
@@ -690,10 +743,42 @@ img, svg { max-width: 100%; display: block; }
         <a href="https://darewear.store" target="_blank" rel="noopener" class="btn-dare btn-dare-amber">Shop Now →</a>
       </div>
       <div class="dare-prod-visual">
-        <div class="dare-store-rack">
-          <div class="dare-hanger"><div class="dare-hanger-hook"></div><div class="dare-hanger-bar"></div><div class="dare-garment dare-garment-1"><div class="dare-garment-text">DARE</div></div></div>
-          <div class="dare-hanger"><div class="dare-hanger-hook"></div><div class="dare-hanger-bar"></div><div class="dare-garment dare-garment-2"><div class="dare-garment-text">GC</div></div></div>
-          <div class="dare-hanger"><div class="dare-hanger-hook"></div><div class="dare-hanger-bar"></div><div class="dare-garment dare-garment-3"><div class="dare-garment-text">DA</div></div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:340px;margin:0 auto;">
+          <!-- DARE Tee -->
+          <a href="https://darewear.store" target="_blank" rel="noopener"
+            style="text-decoration:none;display:block;background:#111;border:1px solid rgba(216,38,27,.3);overflow:hidden;aspect-ratio:3/4;position:relative;">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
+              <div style="font-family:var(--display);font-size:40px;letter-spacing:.08em;color:rgba(255,255,255,.08);line-height:1;">DARE</div>
+              <div style="font-family:var(--display);font-size:9px;letter-spacing:.2em;color:var(--red);">TEE</div>
+            </div>
+            <div style="position:absolute;bottom:14px;left:14px;right:14px;">
+              <div style="font-family:var(--display);font-size:13px;color:#fff;letter-spacing:.06em;">DARE Classic</div>
+              <div style="font-family:var(--display);font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.1em;margin-top:2px;">darewear.store</div>
+            </div>
+          </a>
+          <!-- Golden Child -->
+          <a href="https://darewear.store" target="_blank" rel="noopener"
+            style="text-decoration:none;display:block;background:#111;border:1px solid rgba(200,120,32,.3);overflow:hidden;aspect-ratio:3/4;position:relative;">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
+              <div style="font-family:var(--display);font-size:28px;letter-spacing:.06em;color:rgba(200,120,32,.12);line-height:1;text-align:center;">GOLDEN<br>CHILD</div>
+              <div style="font-family:var(--display);font-size:9px;letter-spacing:.2em;color:#C87820;">APPAREL</div>
+            </div>
+            <div style="position:absolute;bottom:14px;left:14px;right:14px;">
+              <div style="font-family:var(--display);font-size:13px;color:#fff;letter-spacing:.06em;">Golden Child</div>
+              <div style="font-family:var(--display);font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.1em;margin-top:2px;">Limited Drop</div>
+            </div>
+          </a>
+          <!-- New Arrivals span full width -->
+          <a href="https://darewear.store" target="_blank" rel="noopener"
+            style="text-decoration:none;display:block;background:#0a0a0a;border:1px solid rgba(255,255,255,.08);overflow:hidden;aspect-ratio:6/2;position:relative;grid-column:span 2;">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 20px;">
+              <div>
+                <div style="font-family:var(--display);font-size:9px;letter-spacing:.2em;color:var(--red);margin-bottom:4px;">NEW DROPS</div>
+                <div style="font-family:var(--display);font-size:20px;color:#fff;letter-spacing:.06em;">Shop Now →</div>
+              </div>
+              <div style="font-family:var(--display);font-size:40px;color:rgba(255,255,255,.04);letter-spacing:.04em;">DARE</div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -703,7 +788,7 @@ img, svg { max-width: 100%; display: block; }
       <p class="dare-portal-label">DARE Portal</p>
       <p class="dare-portal-text">Seven vaults. One card. A lifetime of access.</p>
     </div>
-    <a href="dare-portal.html" class="dare-portal-btn">Enter the Experience →</a>
+    <a href="https://hypeddit.com/dontaeamare/thelastdon" target="_blank" rel="noopener" class="dare-portal-btn">Enter the Experience →</a>
   </div>
 </section>
 
@@ -712,6 +797,38 @@ img, svg { max-width: 100%; display: block; }
   <blockquote>"Purpose doesn't wait for perfect conditions. Neither does the music."</blockquote>
   <p class="quote-attr">— Dontae Amare</p>
 </div>
+
+<!-- SHOWS -->
+<section id="shows" style="border-top:1px solid var(--hair);background:var(--plinth);">
+  <div class="section-wrap">
+    <p class="eyebrow R">06 — Live</p>
+    <h2 class="section-h R" data-d="1" style="margin-bottom:40px;">Shows &amp;<br><em>Appearances</em></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--hair);" class="R" data-d="2">
+      <!-- Placeholder show slots — replace with real dates -->
+      <div style="background:var(--plinth);padding:28px 24px;display:flex;flex-direction:column;gap:6px;">
+        <div style="font-family:var(--display);font-size:11px;letter-spacing:.18em;color:var(--red);">TBA 2026</div>
+        <div style="font-family:var(--display);font-size:22px;letter-spacing:.04em;color:var(--ink);">Fort Worth, TX</div>
+        <div style="font-family:var(--text);font-size:14px;color:var(--grey);">Album Release Event</div>
+        <div style="font-family:var(--display);font-size:11px;letter-spacing:.12em;color:var(--grey);margin-top:4px;">The Last Don — Live</div>
+      </div>
+      <div style="background:var(--plinth);padding:28px 24px;display:flex;flex-direction:column;gap:6px;opacity:.45;">
+        <div style="font-family:var(--display);font-size:11px;letter-spacing:.18em;color:var(--grey);">COMING SOON</div>
+        <div style="font-family:var(--display);font-size:22px;letter-spacing:.04em;color:var(--ink);">More Dates</div>
+        <div style="font-family:var(--text);font-size:14px;color:var(--grey);">Tour TBA</div>
+      </div>
+      <div style="background:var(--ink);padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;">
+        <div>
+          <div style="font-family:var(--display);font-size:11px;letter-spacing:.18em;color:var(--red);margin-bottom:8px;">Book a Show</div>
+          <div style="font-family:var(--display);font-size:18px;color:#fff;letter-spacing:.04em;line-height:1.3;">Book Dontae for your event, festival, or church.</div>
+        </div>
+        <a href="mailto:dontaerapa@gmail.com" class="btn-dare" style="display:inline-flex;align-self:flex-start;">Book Now →</a>
+      </div>
+    </div>
+    <p class="R" data-d="3" style="font-family:var(--display);font-size:11px;letter-spacing:.12em;color:var(--grey);margin-top:16px;">
+      For booking inquiries: <a href="mailto:dontaerapa@gmail.com" style="color:var(--red);text-decoration:none;">dontaerapa@gmail.com</a>
+    </p>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -758,12 +875,17 @@ img, svg { max-width: 100%; display: block; }
       <p class="nl-sub">Subscribe and get an exclusive pre-release track from <em>The Last Don</em> before it drops August 1. Plus tour updates, drop alerts, and DARE access news.</p>
     </div>
     <div>
-      <form class="nl-form" id="mc-embedded-subscribe-form" action="https://YOUR-MAILCHIMP-ACTION-URL-HERE" method="post" target="_blank" onsubmit="handleSignup(event)" novalidate>
-        <div style="position:absolute;left:-5000px;" aria-hidden="true"><input type="text" name="b_XXXXX_XXXXX" tabindex="-1" value=""></div>
-        <input type="email" name="EMAIL" class="nl-input" placeholder="Your email address" required>
-        <button type="submit" class="nl-btn">Subscribe →</button>
-      </form>
-      <p class="nl-confirm" id="nl-confirm">Thank you — you're in.</p>
+      <p style="font-family:var(--display);font-size:13px;letter-spacing:.1em;color:var(--grey);margin-bottom:16px;">
+        Pre-save The Last Don and get notified on drop day — plus early access to DARE releases.
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="https://hypeddit.com/dontaeamare/thelastdon" target="_blank" rel="noopener" class="btn-primary" style="font-size:18px;">
+          Pre-Save The Last Don →
+        </a>
+      </div>
+      <p style="font-family:var(--text);font-style:italic;font-size:14px;color:var(--grey);margin-top:14px;line-height:1.6;">
+        Drops August 1, 2026 on all platforms. Pre-save now on Spotify, Apple Music &amp; more.
+      </p>
     </div>
   </div>
 </div>
@@ -778,7 +900,7 @@ img, svg { max-width: 100%; display: block; }
       <a href="https://www.youtube.com/@dontaeamare" target="_blank" rel="noopener">YouTube</a>
       <a href="https://instagram.com/dontae.amare" target="_blank" rel="noopener">Instagram</a>
       <a href="https://threads.net/@dontae.amare" target="_blank" rel="noopener">Threads</a>
-      <a href="dare-portal.html">DARE Portal</a>
+      <a href="https://hypeddit.com/dontaeamare/thelastdon" target="_blank" rel="noopener">DARE Portal</a>
     </div>
     <p class="footer-copy">© 2026 Dontae Amare — All Rights Reserved — Fort Worth, TX. Desired Ambitions Requires Execution.</p>
   </div>
@@ -801,14 +923,7 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.R').forEach(el => obs.observe(el));
 
 // Newsletter
-function handleSignup(e) {
-  if(document.getElementById('mc-embedded-subscribe-form').action.includes('YOUR-MAILCHIMP')) {
-    e.preventDefault();
-    const f = document.getElementById('nl-confirm');
-    if(f) f.style.display='block';
-    return false;
-  }
-}
+// Newsletter handled via pre-save link
 </script>
 </body>
 </html>
