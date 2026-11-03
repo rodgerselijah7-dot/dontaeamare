@@ -373,23 +373,6 @@ img, svg { max-width: 100%; display: block; }
 .dare-garment-2 { background: rgba(216,38,27,.12); }
 .dare-garment-text { font-family: var(--display); font-size: 20px; letter-spacing: .1em; color: rgba(255,255,255,.5); }
 
-/* DARE Portal CTA */
-.dare-portal {
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding: 40px var(--pad); max-width: 1280px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
-  padding-bottom: clamp(60px,8vw,100px);
-}
-.dare-portal-label { font-family: var(--display); font-size: 11px; letter-spacing: .18em; color: rgba(255,255,255,.4); margin-bottom: 6px; }
-.dare-portal-text { font-family: var(--display); font-size: clamp(22px,3vw,36px); letter-spacing: .04em; color: var(--wall); }
-.dare-portal-btn {
-  font-family: var(--display); font-size: 20px; letter-spacing: .1em;
-  background: var(--red); color: var(--wall); padding: 12px 28px 10px;
-  text-decoration: none; white-space: nowrap; transition: background .15s;
-}
-.dare-portal-btn:hover { background: #b01f16; }
-@media (max-width: 760px) { .dare-product { grid-template-columns: 1fr; } .dare-product-flip .dare-prod-visual { order: 0; } }
-
 /* ── QUOTE BAND ── */
 .quote-band {
   background: var(--red); color: var(--wall);
@@ -827,13 +810,7 @@ function switchVid(i) {
       </div>
     </div>
   </div>
-  <div class="dare-portal">
-    <div>
-      <p class="dare-portal-label">DARE Portal</p>
-      <p class="dare-portal-text">Seven vaults. One card. A lifetime of access.</p>
-    </div>
-    <a href="https://open.spotify.com/artist/2ZEWeT8awKDSNVGqWuktAx" target="_blank" rel="noopener" class="dare-portal-btn">Enter the Experience →</a>
-  </div>
+
 </section>
 
 <!-- SHOWS -->
