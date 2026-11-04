@@ -1329,16 +1329,21 @@ function switchVid(i) {
 
 /* product grid */
 .dare-prod-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
   gap: 2px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.dare-prod-grid::-webkit-scrollbar { display: none; }
 .dare-prod-card {
   text-decoration: none;
   color: var(--ink);
   display: block;
   background: var(--plinth);
   transition: opacity .2s;
+  flex: 0 0 220px;
 }
 .dare-prod-card:hover { opacity: .82; }
 .dare-prod-img {
@@ -1368,10 +1373,10 @@ function switchVid(i) {
 @media (max-width: 860px) {
   .dare-arcade-inner { grid-template-columns: 1fr; }
   .dare-store-header { grid-template-columns: 1fr; }
-  .dare-prod-grid { grid-template-columns: repeat(2, 1fr); }
+  .dare-prod-card { flex: 0 0 160px; }
 }
 @media (max-width: 480px) {
-  .dare-prod-grid { grid-template-columns: repeat(2, 1fr); }
+  .dare-prod-card { flex: 0 0 140px; }
 }
 </style>
 
