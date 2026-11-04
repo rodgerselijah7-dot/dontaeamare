@@ -1011,14 +1011,17 @@ img, svg { max-width: 100%; display: block; }
   background: radial-gradient(circle 320px at 50% 50%, rgba(201,35,23,.18) 0%, transparent 70%);
   transition: background .15s ease; mix-blend-mode: multiply; z-index: 0;
 }
-.hero-name span { opacity: 0; transform: translateY(28px); animation: heroSlide .7s cubic-bezier(.22,1,.36,1) forwards; display: inline-block; }
-.hero-name span:nth-child(1) { animation-delay: .05s; }
-.hero-name span:nth-child(2) { animation-delay: .18s; }
-.hero-tagline { opacity: 0; animation: heroFade .8s ease .4s forwards; }
-.hero-new     { opacity: 0; animation: heroFade .8s ease .55s forwards; }
-.hero-actions { opacity: 0; animation: heroFade .8s ease .7s forwards; }
-@keyframes heroSlide { to { opacity: 1; transform: none; } }
-@keyframes heroFade  { to { opacity: 1; } }
+.hero-name span { display: inline-block; }
+@keyframes heroSlide { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes heroFade  { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-name span { animation: heroSlide .7s cubic-bezier(.22,1,.36,1) both; }
+  .hero-name span:nth-child(1) { animation-delay: .05s; }
+  .hero-name span:nth-child(2) { animation-delay: .18s; }
+  .hero-tagline { animation: heroFade .8s ease .4s both; }
+  .hero-new     { animation: heroFade .8s ease .55s both; }
+  .hero-actions { animation: heroFade .8s ease .7s both; }
+}
 .hero-stats {
   display: flex; gap: clamp(24px,4vw,48px); flex-wrap: wrap;
   margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--hair);
@@ -1039,7 +1042,7 @@ img, svg { max-width: 100%; display: block; }
   background: rgba(0,0,0,.35); opacity: 0; transition: opacity .25s; z-index: 2;
   border-radius: inherit;
 }
-.video-frame:hover ..video-play-icon {
+.video-play-icon {
   width: 64px; height: 64px; border-radius: 50%;
   background: rgba(201,35,23,.9); display: flex; align-items: center; justify-content: center;
   transform: scale(.9); transition: transform .2s;
