@@ -465,19 +465,12 @@ img,svg { max-width:100%; display:block; }
 /* Arcade visual — premium terminal */
 .dare-terminal {
   margin:0 auto; max-width:280px; width:100%;
-  background:#060606; border:1px solid rgba(184,35,26,.25);
+  background:#000; border:1px solid rgba(184,35,26,.25);
   position:relative; overflow:hidden;
   aspect-ratio:9/16;
 }
-.dare-terminal::before {
-  content:''; position:absolute; inset:0;
-  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(184,35,26,.03) 2px,rgba(184,35,26,.03) 4px);
-  pointer-events:none; z-index:1;
-}
 .dare-terminal-inner {
-  position:relative; z-index:2; height:100%;
-  display:flex; flex-direction:column; justify-content:center; align-items:center; gap:16px;
-  padding:32px;
+  position:absolute; inset:0;
 }
 .dare-terminal-logo {
   font-family:var(--serif); font-size:72px; font-weight:300;
