@@ -532,20 +532,6 @@ img, svg { max-width: 100%; display: block; }
 /* ── MISC ── */
 @media (max-width: 640px) { body { font-size: 16px; } }
 @media (prefers-reduced-motion: reduce) { .R { transition: none; opacity: 1; transform: none; } html { scroll-behavior: auto; } }
-*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; background: var(--wall); -webkit-text-size-adjust: 100%; }
-body {
-  background: var(--wall); color: var(--ink);
-  font-family: var(--text); font-size: 18px; line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-  overflow-x: hidden;
-}
-a { color: inherit; }
-img, svg { max-width: 100%; display: block; }
-:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 
 /* ── NAVBAR ── */
 .hdr {
@@ -1511,7 +1497,7 @@ img, svg { max-width: 100%; display: block; }
 <!-- SHOWS -->
 <section id="shows" style="border-top:1px solid var(--hair);background:var(--plinth);">
   <div class="section-wrap">
-    <p class="eyebrow R">06 — Live</p>
+    <p class="eyebrow R">05 — Live</p>
     <h2 class="section-h R" data-d="1" style="margin-bottom:40px;">Shows &amp;<br><em>Appearances</em></h2>
 
     <!-- Show grid -->
@@ -1560,31 +1546,12 @@ img, svg { max-width: 100%; display: block; }
 </section>
 
 
-<!-- ABOUT -->
-<div style="border-top:1px solid var(--hair);"></div>
-<section id="about">
-  <div class="about">
-    <div class="about-copy">
-      <p class="eyebrow R">06 — About</p>
-      <h2 class="section-h R" data-d="1">Dontae<br><em>Amare</em></h2>
-      <p class="R" data-d="2">
-        Fort Worth native. South Side raised. Faith-driven hip-hop with something to say — stream <em>The Last Don</em>, watch the videos, explore the world.
-      </p>
-      <blockquote class="about-quote R" data-d="3">
-        "Purpose doesn't wait for perfect conditions.<br>Neither does the music."
-      </blockquote>
-      <div class="hero-actions R" data-d="3">
-        <a href="#music" class="btn-primary">Stream Now</a>
-        <a href="#contact" class="btn-outline">Book Dontae</a>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-wrap">
-    <p class="eyebrow R">07 — Contact</p>
+    <p class="eyebrow R">06 — Contact</p>
     <div class="contact-inner">
       <div>
         <h2 class="contact-h R" data-d="1">Let's<br><em>Talk.</em></h2>
@@ -1617,40 +1584,9 @@ img, svg { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<div class="nl-band">
-  <div class="nl-inner">
-    <div>
-      <p class="eyebrow">Stay Connected</p>
-      <h2 class="nl-h">First to know.<br><em>Last to miss out.</em></h2>
-      <p class="nl-sub">Subscribe and get an exclusive pre-release track from <em>The Last Don</em> Plus tour updates, drop alerts, and DARE access news.</p>
-    </div>
-    <div>
-      <p style="font-family:var(--display);font-size:13px;letter-spacing:.1em;color:var(--grey);margin-bottom:16px;">
-        Stream <em>The Last Don</em> now on all platforms — available now.
-      </p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <a href="https://open.spotify.com/artist/2ZEWeT8awKDSNVGqWuktAx" target="_blank" rel="noopener" class="btn-primary" style="font-size:18px;">
-          Stream The Last Don →
-        </a>
-      </div>
-      <p style="font-family:var(--text);font-style:italic;font-size:14px;color:var(--grey);margin-top:14px;line-height:1.6;">
-        Out now on all platforms — Spotify, Apple Music, and more.
-      </p>
-    </div>
-  </div>
-</div>
 
-<!-- TRUST STRIP -->
-<div style="background:var(--ink);border-top:1px solid rgba(255,255,255,.08);">
-  <div style="max-width:1280px;margin:0 auto;padding:14px var(--pad);display:flex;gap:clamp(16px,4vw,48px);flex-wrap:wrap;justify-content:center;font-family:var(--display);font-size:12px;letter-spacing:.12em;color:rgba(255,255,255,.45);">
-    <span>Fort Worth, TX</span>
-  <span>Available on Spotify &amp; Apple Music</span>
-  <span>The Last Don — Out Now</span>
-  <span>DARE Arcade · DARE Store · DARE Portal</span>
-  <span>Author · Recording Artist</span>
-  </div>
-</div>
+
+
 <!-- FOOTER -->
 <footer class="footer-band">
   <div class="footer-inner">
